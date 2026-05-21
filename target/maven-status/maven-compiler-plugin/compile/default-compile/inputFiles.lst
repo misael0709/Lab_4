@@ -12,4 +12,11 @@ C:\Users\misae\Documents\MCC\Curso Java-Python\Bloque 4\Laboratorio 4\src\main\j
 C:\Users\misae\Documents\MCC\Curso Java-Python\Bloque 4\Laboratorio 4\src\main\java\com\axity\dinosaurpark\model\Vehicle.java
 C:\Users\misae\Documents\MCC\Curso Java-Python\Bloque 4\Laboratorio 4\src\main\java\com\axity\dinosaurpark\model\VehicleStatus.java
 C:\Users\misae\Documents\MCC\Curso Java-Python\Bloque 4\Laboratorio 4\src\main\java\com\axity\dinosaurpark\model\Worker.java
+C:\Users\misae\Documents\MCC\Curso Java-Python\Bloque 4\Laboratorio 4\src\main\java\com\axity\dinosaurpark\persistence\DatabaseService.java
+C:\Users\misae\Documents\MCC\Curso Java-Python\Bloque 4\Laboratorio 4\src\main\java\com\axity\dinosaurpark\persistence\EventRecord.java
+C:\Users\misae\Documents\MCC\Curso Java-Python\Bloque 4\Laboratorio 4\src\main\java\com\axity\dinosaurpark\persistence\ExpenseRecord.java
+C:\Users\misae\Documents\MCC\Curso Java-Python\Bloque 4\Laboratorio 4\src\main\java\com\axity\dinosaurpark\persistence\RevenueRecord.java
+C:\Users\misae\Documents\MCC\Curso Java-Python\Bloque 4\Laboratorio 4\src\main\java\com\axity\dinosaurpark\zone\ArrivalZone.java
+C:\Users\misae\Documents\MCC\Curso Java-Python\Bloque 4\Laboratorio 4\src\main\java\com\axity\dinosaurpark\zone\ExperienceType.java
+C:\Users\misae\Documents\MCC\Curso Java-Python\Bloque 4\Laboratorio 4\src\main\java\com\axity\dinosaurpark\zone\ParkZone.java
 C:\Users\misae\Documents\MCC\Curso Java-Python\Bloque 4\Laboratorio 4\src\main\java\com\axity\dinosaurpark\zone\PowerPlant.java
