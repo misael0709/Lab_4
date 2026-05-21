@@ -19,7 +19,7 @@ public abstract class Dinosaur {
     public abstract String getDiet();
     public abstract double getDangerLevel();
 
-    // Métodos concretos compartidos
+    // Métodos compartidos
     public void escape() { this.status = DinosaurStatus.ESCAPED; }
     public void recapture() { this.status = DinosaurStatus.RECAPTURED; }
     public void returnToEnclosure() { this.status = DinosaurStatus.IN_ENCLOSURE; }

@@ -22,10 +22,9 @@ public class PowerPlant implements ParkZone {
         if (isOperational) {
             currentEnergy = Math.max(0, currentEnergy - consumptionPerStep);
             
-            // Verificamos si la planta sufre una falla aleatoria en este step
+            // Verificamos si la planta sufre una falla aleatoria
             if (rng.nextDouble() < failureProbability) {
                 triggerFailure();
-                // Opcional: Aquí se podría registrar un EventRecord en db si así se desea
             }
         }
     }
@@ -43,7 +42,7 @@ public class PowerPlant implements ParkZone {
     public boolean isOperational() { return isOperational; }
     public double getCurrentEnergy() { return currentEnergy; }
 
-    // Implementación de la interfaz (los turistas no entran a la planta)
+    // Implementación de la interfaz
     @Override public String getName() { return "Planta de Energía"; }
     @Override public boolean hasCapacity() { return false; }
     @Override public int getCurrentOccupancy() { return 0; }

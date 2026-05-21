@@ -33,7 +33,7 @@ public class SimulationEngine {
     
     public SimulationEngine(ParkConfig config) {
         this.config = config;
-        this.rng = new Random(); // Instancia sin semilla para no-determinismo
+        this.rng = new Random();
         
         DatabaseService db = new DatabaseService(config.getString("db.path", "./data/parkdb"));
         PowerPlant powerPlant = new PowerPlant(config);
@@ -123,11 +123,10 @@ public class SimulationEngine {
             state.getPowerPlant().tick(rng, state.getDb());
             state.getVehicles().forEach(Vehicle::tick);
             
-            // D. EVENTOS PROBABILÍSTICOS
+            // D. EVENTOS
             for (SimulationEvent event : allEvents) {
                 if (rng.nextDouble() < event.getProbability()) {
                     event.execute(state, rng);
-                    // ¡Esta es la línea que faltaba! Registra el evento en el estado actual
                     state.addActiveEvent(event.getName()); 
                 }
             }

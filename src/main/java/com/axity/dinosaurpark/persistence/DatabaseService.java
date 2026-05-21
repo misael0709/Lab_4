@@ -1,6 +1,5 @@
 package com.axity.dinosaurpark.persistence;
 
-
 import liquibase.Scope;
 import liquibase.command.CommandScope;
 import liquibase.database.Database;
@@ -28,13 +27,13 @@ public class DatabaseService {
     private void runLiquibase() throws Exception {
         Database db = DatabaseFactory.getInstance().findCorrectDatabaseImplementation(new JdbcConnection(connection));
         
-        // La nueva API de Liquibase usa Scope y CommandScope para ejecutar migraciones
         Scope.child(Scope.Attr.resourceAccessor, new ClassLoaderResourceAccessor(), () -> {
             CommandScope updateCommand = new CommandScope("update");
             updateCommand.addArgumentValue("changelogFile", "db/changelog/db.changelog-master.xml");
             updateCommand.addArgumentValue("database", db);
             updateCommand.execute();
         });
+        connection.setAutoCommit(true);
     }
 
     public void appendRevenue(RevenueRecord r) {

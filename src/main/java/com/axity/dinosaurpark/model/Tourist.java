@@ -26,7 +26,7 @@ public class Tourist {
         this.visitedZones.add(zoneName);
     }
 
-    // Getters y Setters necesarios
+    // Getters y Setters
     public int getId() { return id; }
     public String getName() { return name; }
     public TouristStatus getStatus() { return status; }

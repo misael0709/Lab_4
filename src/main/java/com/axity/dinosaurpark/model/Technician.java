@@ -14,7 +14,6 @@ public class Technician extends Worker {
         return "TECHNICIAN";
     }
 
-    // Lógica del nivel intermedio: necesita un vehículo AVAILABLE para reparar
     public void repairIfNeeded(PowerPlant plant, List<Vehicle> vehicles) {
         if (!plant.isOperational()) {
             Optional<Vehicle> available = vehicles.stream()

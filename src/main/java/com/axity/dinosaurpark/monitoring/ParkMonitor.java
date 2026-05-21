@@ -24,7 +24,7 @@ public class ParkMonitor {
         String events = state.getActiveEventNames().isEmpty() ? "Ninguno" : String.join(", ", state.getActiveEventNames());
         System.out.println("4. Eventos activos: " + events);
         
-        // Métrica 5: Vehículos no disponibles (en uso o rotos)
+        // Métrica 5: Vehículos no disponibles
         System.out.println("5. Vehículos ocupados/averiados: " + state.countVehiclesInUse() + "/" + state.getVehicles().size());
         System.out.println("========================================\n");
     }

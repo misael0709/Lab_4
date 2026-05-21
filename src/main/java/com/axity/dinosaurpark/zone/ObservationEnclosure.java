@@ -19,7 +19,7 @@ public class ObservationEnclosure implements ParkZone {
 
     public ObservationEnclosure(ExperienceType type, ParkConfig config) {
         this.type = type;
-        // Leemos las properties dinámicamente: enclosure.basic.maxVisitors, etc.
+        // Leemos las properties dinámicamente
         String prefix = "enclosure." + type.name().toLowerCase();
         this.maxVisitors = config.getInt(prefix + ".maxVisitors", 10);
         this.entryFee = config.getDouble(prefix + ".entryFee", 10.0);
@@ -37,7 +37,7 @@ public class ObservationEnclosure implements ParkZone {
             ));
             
             conductSurvey(tourist, rng);
-            // Inmediatamente lo sacamos para no bloquear el encierro para siempre
+            
             exit(tourist);
         }
     }

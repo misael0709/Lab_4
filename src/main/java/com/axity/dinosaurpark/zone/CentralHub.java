@@ -20,7 +20,7 @@ public class CentralHub implements ParkZone {
     public void visit(Tourist tourist, Random rng, DatabaseService db, double discount) {
         tourist.recordVisit(getName());
         
-        // Tira el dado para ver si compra el souvenir
+        // Se define si compra o no el souvenir
         if (rng.nextDouble() < purchaseProbability) {
             double finalPrice = souvenirPrice * (1.0 - discount);
             tourist.spend(finalPrice);
@@ -31,7 +31,6 @@ public class CentralHub implements ParkZone {
         }
     }
 
-    // El hub central no tiene límite de capacidad
     @Override public String getName() { return "Recinto Central"; }
     @Override public boolean hasCapacity() { return true; }
     @Override public int getCurrentOccupancy() { return 0; }

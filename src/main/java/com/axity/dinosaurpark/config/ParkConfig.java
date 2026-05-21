@@ -30,7 +30,7 @@ public final class ParkConfig {
         return instance;
     }
 
-    // Métodos de lectura utilitarios
+    // Métodos de lectura
     public int getInt(String key, int defaultValue) {
         String value = props.getProperty(key);
         return value != null ? Integer.parseInt(value) : defaultValue;
@@ -50,7 +50,7 @@ public final class ParkConfig {
     }
 
     // Solo para tests — permite limpiar la instancia en memoria entre ejecuciones de JUnit
-    static void resetForTesting() {
+    public static void resetForTesting() {
         instance = null;
     }
 }

@@ -28,12 +28,11 @@ public class BathroomZone implements ParkZone {
     }
 
     public void tryEnter(Tourist tourist, Random rng, DatabaseService db) {
-        // Solo entra si hay capacidad y no está ya adentro
+        // Solo entra si hay capacidad y no hay nadie adentro
         if (hasCapacity() && !occupantsTime.containsKey(tourist)) {
             occupantsTime.put(tourist, useDurationSteps);
             tourist.recordVisit(getName());
             
-            // Tira el dado para servicio de SPA
             if (rng.nextDouble() < spaProbability) {
                 tourist.spend(spaPrice);
                 db.appendRevenue(new RevenueRecord(
