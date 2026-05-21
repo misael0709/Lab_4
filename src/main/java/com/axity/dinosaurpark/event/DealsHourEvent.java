@@ -19,6 +19,7 @@ public class DealsHourEvent implements SimulationEvent {
 
     @Override
     public void execute(ParkState state, Random rng) {
+        System.out.println("[EVENTO] ¡HORA DE OFERTAS! Descuento del 30% activo este step.");
         state.setDealsHourActive(true);
         state.setCurrentDiscount(0.30);
         state.getDb().appendEvent(toRecord(state.getCurrentStep()));

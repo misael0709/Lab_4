@@ -20,6 +20,8 @@ public class BlackoutEvent implements SimulationEvent {
 
     @Override
     public void execute(ParkState state, Random rng) {
+        System.out.println("[EVENTO] ¡APAGÓN MASIVO! La planta eléctrica colapsó.");
+        state.getPowerPlant().breakdown();
         state.getPowerPlant().triggerFailure();
         state.getDb().appendExpense(new ExpenseRecord(
             0, "EMERGENCIA", 2000.0, "Reparación por apagón masivo", LocalDateTime.now()

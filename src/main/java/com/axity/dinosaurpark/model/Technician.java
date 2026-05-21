@@ -1,7 +1,6 @@
 package com.axity.dinosaurpark.model;
 
 import java.util.List;
-import java.util.Optional;
 import com.axity.dinosaurpark.zone.PowerPlant;
 
 public class Technician extends Worker {
@@ -14,16 +13,18 @@ public class Technician extends Worker {
         return "TECHNICIAN";
     }
 
-    public void repairIfNeeded(PowerPlant plant, List<Vehicle> vehicles) {
-        if (!plant.isOperational()) {
-            Optional<Vehicle> available = vehicles.stream()
-                .filter(v -> v.getStatus() == VehicleStatus.AVAILABLE)
-                .findFirst();
-            
-            if (available.isPresent()) {
-                available.get().use();
-                plant.repair();
-                available.get().free();
+    public void repairIfNeeded(PowerPlant powerPlant, List<Vehicle> vehicles) {
+        if (powerPlant.isBroken()) {
+            Vehicle vehicleToUse = vehicles.stream()
+                    .filter(v -> v.getStatus() == VehicleStatus.AVAILABLE)
+                    .findFirst()
+                    .orElse(null);
+
+            if (vehicleToUse != null) {
+                vehicleToUse.use();
+                powerPlant.repair();
+                System.out.println("[" + getName() + "] Reparó la planta usando Vehículo"); 
+                vehicleToUse.free();
             }
         }
     }

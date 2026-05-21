@@ -10,6 +10,7 @@ public class PowerPlant implements ParkZone {
     private final double consumptionPerStep;
     private final double failureProbability;
     private boolean isOperational;
+    private boolean isBroken = false;
 
     public PowerPlant(ParkConfig config) {
         this.currentEnergy = config.getDouble("powerplant.initialEnergy", 100.0);
@@ -29,18 +30,25 @@ public class PowerPlant implements ParkZone {
         }
     }
 
+    public void breakdown() {
+        this.isBroken = true;
+        this.currentEnergy = 0.0;
+        System.out.println("[PowerPlant] ¡FALLO ELÉCTRICO! La planta dejó de operar.");
+    }
+
     public void triggerFailure() {
         this.isOperational = false;
         this.currentEnergy = 0.0;
     }
 
     public void repair() {
-        this.isOperational = true;
-        this.currentEnergy = 100.0;
+        this.isBroken = false;
+        this.currentEnergy = 100.0; // Restaura la energía al 100%
     }
 
     public boolean isOperational() { return isOperational; }
     public double getCurrentEnergy() { return currentEnergy; }
+    public boolean isBroken() { return this.isBroken; }
 
     // Implementación de la interfaz
     @Override public String getName() { return "Planta de Energía"; }

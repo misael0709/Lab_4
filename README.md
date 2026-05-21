@@ -31,3 +31,7 @@ El sistema simula la gestión operativa de un parque, controlando el flujo no de
 # Ejecutar pruebas unitarias.
 1. Para validar las pruebas unitarias, se escribe el comando "mvn test" en la terminal del proyecto, la cual ejecutará las pruebas.
 2. (Opcional) En la dirección "target/site/" se puede abrir el archivo "index.html" el cual muestra el resultado de las pruebas de manera mas gráfica.
+
+# Diagrama de flujo
+
+![Diagrama de Flujo](docs/Diagrama_Flujo_Lab4.png)

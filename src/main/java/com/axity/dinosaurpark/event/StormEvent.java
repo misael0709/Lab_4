@@ -21,6 +21,9 @@ public class StormEvent implements SimulationEvent {
 
     @Override
     public void execute(ParkState state, Random rng) {
+        System.out.println("[EVENTO] ¡TORMENTA TORRENCIAL! Evacuando turistas al Hub Central.");
+        int evacuados = state.getActiveTourists().size();
+        System.out.println("[EVENTO] " + evacuados + " turistas evacuados.");
         for (Tourist t : state.getActiveTourists()) {
             t.recordVisit("Evacuación");
         }
