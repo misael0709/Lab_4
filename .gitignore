@@ -1,0 +1,14 @@
+# Archivos compilados por Maven
+target/
+
+# Bases de datos H2
+data/
+*.db
+*.trace.db
+
+# Archivos CSV de salida
+output/
+*.csv
+
+# Configuraciones de VS Code (opcional pero recomendado)
+.vscode/
